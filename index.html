@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="BossTech: Tech solutions for tomorrow. We provide coding and tech software solutions tailored to your business needs." />
+    <title>BossTech | Innovative Tech Solutions</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script>
+      (function () {
+        emailjs.init("thL5vwGX_OWlBKT15");
+      })();
+    </script>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <header>
+      <nav class="navbar">
+        <div class="logo">BossTeK</div>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <!-- Hamburger Menu Icon for Mobile -->
+        <div class="hamburger" id="hamburger">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1 class="fade-in">Innovative Tech, Empowering Your Business</h1>
+        <p class="fade-in-delay">
+          Providing cutting-edge solutions through coding, software, and
+          tailored tech services.
+        </p>
+        <a href="#contact" class="btn-primary slide-up"
+          >Get a Free Consultation</a
+        >
+      </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="about">
+      <h2 class="fade-in">Who We Are</h2>
+      <p>
+        At BossTech, we’re passionate about solving real-world problems through
+        technology. Our mission is to provide top-tier tech solutions that drive
+        innovation and growth for businesses of all sizes.
+      </p>
+      <div class="vision fade-in">
+        <h3 class="vision">Our Vision</h3>
+        <p>
+          To be the leading force in bridging the gap between business needs and
+          technology.
+        </p>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+      <h2 class="fade-in">Our Services</h2>
+      <div class="services-container">
+        <div class="service-card slide-up">
+          <h3>Custom Software Development</h3>
+          <p>
+            We develop tailored software solutions that solve your unique
+            business challenges.
+          </p>
+        </div>
+        <div class="service-card slide-up">
+          <h3>Web & Mobile App Development</h3>
+          <p>
+            Whether it’s creating a website, building an app, or optimizing your
+            digital presence, we’ve got you covered.
+          </p>
+        </div>
+        <div class="service-card slide-up">
+          <h3>Tech Consulting</h3>
+          <p>
+            Our expert consultants provide insightful advice on leveraging tech
+            to improve your operations.
+          </p>
+        </div>
+        <div class="service-card slide-up">
+          <h3>Cloud & Data Solutions</h3>
+          <p>
+            Scalable, secure, and reliable cloud solutions for businesses
+            looking to harness the power of big data.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <!-- <section id="portfolio" class="portfolio">
+      <h2 class="fade-in">Our Portfolio</h2>
+      <div class="portfolio-items">
+        <div class="portfolio-item slide-up">
+          <h3>Project A</h3>
+          <p>A project that we proud of</p>
+        </div>
+        <div class="portfolio-item slide-up">
+          <h3>Project B</h3>
+          <p>An application feature</p>
+        </div>
+        <div class="portfolio-item slide-up">
+          <h3>Project C</h3>
+          <p>Website or web application</p>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+      <h2 class="fade-in">Contact Us</h2>
+      <div class="contact-container">
+        <!-- Contact Information -->
+        <div class="contact-info">
+          <h3>Mail</h3>
+          <p>l.k.monawe@gmail.com</p>
+
+          <h3>Address</h3>
+          <p>Johannesburg</p>
+
+          <h3>Phone</h3>
+          <p>+27 76 374 2603</p>
+        </div>
+
+        <!-- Contact Form -->
+        <aside class="formContainer">
+          <form id="contact-form">
+            <input type="text" name="name" placeholder="Your Name" required />
+            <input
+              type="email"
+              name="email"
+              placeholder="Your Email"
+              required />
+            <textarea
+              name="message"
+              placeholder="Your Message"
+              rows="8"
+              required></textarea>
+            <button type="submit" class="btn-primary">Submit</button>
+            <p id="status"></p>
+          </form>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <p>© 2024 BossTech. All Rights Reserved.</p>
+        <ul class="social-links">
+          <li><a href="#">LinkedIn</a></li>
+          <li><a href="#">Twitter</a></li>
+          <li><a href="#">Facebook</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <!-- JavaScript for Smooth Scrolling and Form Submission -->
+    <script>
+      // Smooth Scroll
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+          });
+        });
+      });
+
+      // EmailJS Form Submission
+      document
+        .getElementById("contact-form")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          emailjs.sendForm("service_2lqgb8h", "template_ykbjlb2", this).then(
+            function () {
+              document.getElementById("status").innerText = "Success";
+            },
+            function (error) {
+              document.getElementById("status").innerText = "Error";
+            }
+          );
+        });
+
+      // Form Validation
+      function validateForm() {
+        const name = document.forms[0]["name"].value;
+        const email = document.forms[0]["email"].value;
+        const message = document.forms[0]["message"].value;
+        const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+        if (!email.match(emailPattern)) {
+          alert("Please enter a valid email address.");
+          return false;
+        }
+
+        if (name == "" || message == "") {
+          alert("All fields must be filled out.");
+          return false;
+        }
+        return true;
+      }
+
+      // JavaScript for the hamburger menu toggle
+      const hamburger = document.getElementById("hamburger");
+      const navLinks = document.getElementById("navLinks");
+
+      hamburger.addEventListener("click", () => {
+        navLinks.classList.toggle("show");
+      });
+    </script>
+  </body>
+</html>
